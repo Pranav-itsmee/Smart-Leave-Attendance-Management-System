@@ -53,7 +53,8 @@ public class SecurityConfig {
                     .requestMatchers("/api/leave/*/review").hasRole("MANAGER")
                     
                     //HR
-                    .requestMatchers("/api/hr/**").hasRole("HR")
+                    .requestMatchers("/api/hr/**").authenticated()
+//                    .requestMatchers("/api/hr/**").hasRole("HR")
 
                     .anyRequest().authenticated()
         )
